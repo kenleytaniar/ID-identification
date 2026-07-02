@@ -138,7 +138,12 @@ def ocr_page():
     lang_code = languages[selected_lang]
 
     # Initialize PaddleOCR
-    ocr = PaddleOCR(use_angle_cls=True, lang=lang_code, use_gpu=False)
+    ocr = PaddleOCR(
+    use_angle_cls=True, 
+    lang=lang_code, 
+    use_gpu=False,
+    show_log=False  # Menambahkan ini sering membantu menghindari error log
+)
 
     # Streamlit app
     st.title('APLIKASI OCR UNTUK PENGENALAN TEKS PADA GAMBAR KTP')
